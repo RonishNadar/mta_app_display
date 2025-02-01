@@ -14,7 +14,7 @@ import st7796
 import ft6336u
 from PIL import Image, ImageDraw, ImageFont
 
-image = Image.new("RGB", (480, 320), "#000000")
+# image = Image.new("RGB", (480, 320), "#000000")
 disp = st7796.st7796()
 touch = ft6336u.ft6336u()
 
@@ -131,6 +131,7 @@ def format_time_remaining(seconds):
 
 def display_schedule_on_image(train_schedule):
     """Displays train schedule on an image."""
+    image = Image.new("RGB", (480, 320), "#000000")
     draw = ImageDraw.Draw(image)
     draw.rectangle([(0, 0), (480, 320)], fill="#303030")    
     font_40 = ImageFont.truetype("OpenSans-Bold.ttf", 40)
