@@ -145,6 +145,7 @@ def display_schedule_on_image(train_schedule):
             draw, trains[0]['route_id'], trains[0]['destination'],
             times[0], times[1] if len(times) > 1 else "", i // 2, font_40, font_30
         )
+    image = image.transpose(Image.FLIP_TOP_BOTTOM)
     image = image.rotate(0)
     disp.show_image(image)
 
